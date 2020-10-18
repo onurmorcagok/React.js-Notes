@@ -6,10 +6,13 @@ import ProductList from "./ProductList";
 import { Container, Row, Col } from "reactstrap";
 
 function App() {
+
   let productInfo = { title: "ProductList" };
   let categoryInfo = { title: "CategoryList" };
+
   return (
     <div>
+
       <Container>
         <Row>
           <Navbar />
@@ -23,6 +26,7 @@ function App() {
           </Col>
         </Row>
       </Container>
+
     </div>
   );
 }
