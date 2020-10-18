@@ -3,18 +3,17 @@ import { ListGroup, ListGroupItem } from "reactstrap";
 
 export default class CategoryList extends Component {
   state = {
-    categories: [
-      { categoryId: 1, categoryName: "iPhone" },
-      { categoryId: 2, categoryName: "Samsung" },
-      { categoryId: 3, categoryName: "Huawei" },
-      { categoryId: 4, categoryName: "Xiaomi" },
-      { categoryId: 5, categoryName: "Oppo" },
-    ],
-    currenctCategory: "",
+    categories: [],
   };
 
-  changeCategory = (category) => {
-    this.setState({ currenctCategory : category.categoryName });
+  componentDidMount(){
+    this.getCategories();
+  }
+
+    getCategories = () => {
+    fetch("http://localhost:3000/categories")
+      .then((response) => response.json())
+      .then((data) => this.setState({ categories: data }));
   };
 
   render() {
@@ -23,12 +22,17 @@ export default class CategoryList extends Component {
         <h3>{this.props.categoryTitle.title}</h3>
         <ListGroup>
           {this.state.categories.map((category) => (
-            <ListGroupItem onClick={() => {this.changeCategory(category)}} key={category.categoryId}>
+            <ListGroupItem
+              onClick={() => {
+                this.props.changeCategory(category);
+              }}
+              key={category.id}
+            >
               {category.categoryName}
             </ListGroupItem>
           ))}
         </ListGroup>
-          <h4>{this.state.currenctCategory}</h4>
+        {/* <h4>{this.props.currentCategory}</h4> */}
       </div>
     );
   }
