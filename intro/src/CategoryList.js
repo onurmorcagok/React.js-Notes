@@ -20,7 +20,7 @@ export default class CategoryList extends Component {
   render() {
     return (
       <div>
-        <h3>{this.props.info.title}</h3>
+        <h3>{this.props.categoryTitle.title}</h3>
         <ListGroup>
           {this.state.categories.map((category) => (
             <ListGroupItem onClick={() => {this.changeCategory(category)}} key={category.categoryId}>

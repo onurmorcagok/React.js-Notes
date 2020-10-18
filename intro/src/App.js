@@ -19,10 +19,10 @@ function App() {
         </Row>
         <Row>
           <Col xs="3">
-            <CategoryList info={productInfo} />
+            <CategoryList categoryTitle={productInfo} />
           </Col>
           <Col xs="9">
-            <ProductList info={categoryInfo} />
+            <ProductList productTitle={categoryInfo} />
           </Col>
         </Row>
       </Container>
