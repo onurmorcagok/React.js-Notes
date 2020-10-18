@@ -607,14 +607,6 @@
       "quantityPerUnit": "12 boxes",
       "unitPrice": 13,
       "unitsInStock": 32
-    },
-    {
-      "id": 78,
-      "categoryId": "10",
-      "productName": "iMac",
-      "quantityPerUnit": "Apple Macbook Pro",
-      "unitPrice": "15000",
-      "unitsInStock": "23"
     }
   ],
   "categories": [
