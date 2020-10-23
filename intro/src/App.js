@@ -4,6 +4,7 @@ import CategoryList from "./CategoryList";
 import ProductList from "./ProductList";
 
 import { Container, Row, Col } from "reactstrap";
+import alertify from "alertifyjs";
 
 export default class App extends Component {
   state = {
@@ -42,6 +43,15 @@ export default class App extends Component {
       newCart.push({ product: product, quantity: 1 });
     }
     this.setState({ cart: newCart });
+    
+    alertify.success(product.productName + " added to cart.",2);
+  };
+
+  removeFromCart = (product) => {
+    let newCart = this.state.cart.filter(
+      (cartItem) => cartItem.product.id !== product.id
+    );
+    this.setState({ cart: newCart });
   };
 
   render() {
@@ -50,7 +60,7 @@ export default class App extends Component {
     return (
       <div>
         <Container>
-          <Navbar cart={this.state.cart} />
+          <Navbar removeFromCart={this.removeFromCart} cart={this.state.cart} />
           <Row>
             <Col xs="3">
               <CategoryList
