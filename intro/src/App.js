@@ -4,6 +4,8 @@ import CategoryList from "./CategoryList";
 import ProductList from "./ProductList";
 import NotFound from "./NotFound";
 import CartList from "./CartList";
+import FormDemo1 from "./FormDemo1";
+import FormDemo2 from "./FormDemo2";
 
 import { Container, Row, Col } from "reactstrap";
 import alertify from "alertifyjs";
@@ -58,7 +60,6 @@ export default class App extends Component {
     this.setState({ cart: newCart });
 
     alertify.error(product.productName + " removed from cart.", 2);
-
   };
 
   render() {
@@ -92,13 +93,19 @@ export default class App extends Component {
                     />
                   )}
                 ></Route>
-                <Route exact path="/cart" render={(props) => (
+                <Route
+                  exact
+                  path="/cart"
+                  render={(props) => (
                     <CartList
                       {...props}
                       cart={this.state.cart}
                       removeFromCart={this.removeFromCart}
                     />
-                  )}></Route>
+                  )}
+                ></Route>
+                <Route path="/form1" component={FormDemo1}></Route>
+                <Route path="/form2" component={FormDemo2}></Route>
                 <Route component={NotFound}></Route>
               </Switch>
             </Col>

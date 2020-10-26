@@ -9,6 +9,7 @@ import {
   NavLink,
 } from "reactstrap";
 import CartSummary from "./CartSummary";
+import { Link } from "react-router-dom";
 
 export default class Navi extends React.Component {
   render() {
@@ -19,14 +20,17 @@ export default class Navi extends React.Component {
           <NavbarToggler />
           <Collapse navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
-                </NavLink>
-              </NavItem>
+              <NavLink>
+                <NavItem>
+                  <Link to="/form1">FormDemo 1</Link>
+                </NavItem>
+              </NavLink>
+              <NavLink>
+                <NavItem>
+                  <Link to="/form2">FormDemo 2</Link>
+                </NavItem>
+              </NavLink>
+
               <CartSummary
                 removeFromCart={this.props.removeFromCart}
                 cart={this.props.cart}

@@ -7,7 +7,7 @@ export default class CartList extends Component {
       <Table striped>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>#</th>
             <th>Category ID</th>
             <th>Product Name</th>
             <th>Unit Price</th>
