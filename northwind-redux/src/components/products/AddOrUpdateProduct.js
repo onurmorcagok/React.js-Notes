@@ -70,4 +70,4 @@ const mapDispatchToProps = {
   saveProduct,
 };
 
-export default connect(mapDispatchToProps, mapStateToProps)(AddOrUpdateProduct);
+export default connect(mapStateToProps,mapDispatchToProps)(AddOrUpdateProduct);
