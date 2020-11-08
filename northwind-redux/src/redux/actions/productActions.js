@@ -37,7 +37,7 @@ export function saveProduct(product) {
       .then((savedProduct) => {
         product.id
           ? dispatch(updateProductSuccess(savedProduct))
-          : dispatch(createProductSuccess(saveProduct));
+          : dispatch(createProductSuccess(savedProduct));
       })
       .catch((error) => {
         throw error;

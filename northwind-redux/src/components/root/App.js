@@ -15,7 +15,7 @@ function App() {
         <Route path="/" exact component={Dashboard}></Route>
         <Route path="/product" exact component={Dashboard}></Route>
         <Route path="/cart" exact component={CartDetail}></Route>
-        <Route path="/saveProduct" component={AddOrUpdateProduct}></Route>
+        <Route path="/saveproduct/:productId" component={AddOrUpdateProduct}></Route>
       </Switch>
     </Container>
   );
