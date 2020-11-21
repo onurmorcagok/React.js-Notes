@@ -27,6 +27,30 @@ const ProductDetail = ({ categories, product, onSave, onChange }) => {
         error="Error !"
       ></SelectInput>
 
+      <TextInput
+        name="unitPrice"
+        label="Unit Price"
+        value={product.unitPrice}
+        onChange={onChange}
+        error="Error !"
+      ></TextInput>
+
+      <TextInput
+        name="quantityPerUnit"
+        label="Quantity Per Unit"
+        value={product.quantityPerUnit}
+        onChange={onChange}
+        error="Error !"
+      ></TextInput>
+
+      <TextInput
+        name="unitsInStock"
+        label="Units In Stock"
+        value={product.unitsInStock}
+        onChange={onChange}
+        error="Error !"
+      ></TextInput>
+
       <button type="submit" className="btn btn-success">
         Save
       </button>
