@@ -21,7 +21,7 @@ const Navi = (props) => {
     <div>
       <Navbar color="light" light expand="md">
         <NavbarBrand>
-          <Link to="/">Northwind Store</Link>
+          <Link to="/">Northwind Store App</Link>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
