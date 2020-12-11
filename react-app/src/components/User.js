@@ -15,7 +15,7 @@ class User extends Component {
     });
   };
   render() {
-    // Destructing
+    // Destructing Using
     const { name, age, department } = this.props;
     const { isVisible } = this.state;
     return (
