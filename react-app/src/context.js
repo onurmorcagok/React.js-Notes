@@ -27,19 +27,19 @@ export class UserProvider extends Component {
         id: "unique-1",
         name: "Onur MORCAGÖK",
         age: "24",
-        department: "Frontend Development",
+        department: "Frontend Developer",
       },
       {
         id: "unique-2",
         name: "Samim ŞEN",
         age: "25",
-        department: "Backend Development",
+        department: "Backend Developer",
       },
       {
         id: "unique-3",
         name: "Cihan ÖNERYILDIZ",
         age: "22",
-        department: "System Administration",
+        department: "System Administrator",
       },
     ],
     dispatch: (action) => {
