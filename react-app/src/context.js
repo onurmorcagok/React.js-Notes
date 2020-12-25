@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 const UserContext = React.createContext();
-// Provider, Consumer
+// Provider, Consumer Using
 
 const reducer = (state, action) => {
   switch (action.type) {
