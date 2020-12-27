@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "name": "Onur MORCAGÖK",
+      "age": "24",
+      "department": "Software Development",
+      "id": 1
+    },
+    {
+      "name": "Samim ŞEN",
+      "age": "25",
+      "department": "Software Development",
+      "id": 2
+    },
+    {
+      "name": "Cihan Öneryıldız",
+      "age": "21",
+      "department": "Human Resources",
+      "id": 3
+    }
+  ]
+}

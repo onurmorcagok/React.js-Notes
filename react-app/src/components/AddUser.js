@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import posed from "react-pose";
 import UserConsumer from "../context";
 
-var uniqid = require("uniqid"); // Random ID Creator
+import axios from "axios";
 
 const Animation = posed.div({
   visible: {
@@ -22,9 +22,9 @@ const Animation = posed.div({
 class AddUser extends Component {
   state = {
     visible: false,
-    name: '',
-    age: '',
-    department: '',
+    name: "",
+    age: "",
+    department: "",
   };
   changeVisibility = (e) => {
     this.setState({
@@ -36,17 +36,19 @@ class AddUser extends Component {
       [e.target.name]: e.target.value,
     });
   };
-  addUser = (dispatch, e) => {
+  addUser = async (dispatch, e) => {
     e.preventDefault();
     const { name, age, department } = this.state;
 
     const newUser = {
-      id: uniqid(),
       name,
       age,
       department,
     };
-    dispatch({ type: "ADD_USER", payload: newUser });
+
+    const response = await axios.post("http://localhost:3004/users", newUser);
+
+    dispatch({ type: "ADD_USER", payload: response.data });
   };
   render() {
     const { visible } = this.state;
@@ -59,7 +61,7 @@ class AddUser extends Component {
             <div className="col-md-8 mb-4">
               <button
                 onClick={this.changeVisibility}
-                className="btn btn-danger btn-block mb-2"
+                className="btn btn-dark btn-block mb-2"
               >
                 {visible ? "Hide Form" : "Show Form"}
               </button>
@@ -107,7 +109,7 @@ class AddUser extends Component {
                         ></input>
                       </div>
                       <button
-                        className="btn btn-success btn-block"
+                        className="btn btn-danger btn-block"
                         type="submit"
                       >
                         Add User

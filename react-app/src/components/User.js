@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import axios from "axios";
+
 import UserConsumer from "../context";
 
 class User extends Component {
@@ -16,11 +18,19 @@ class User extends Component {
       isVisible: !this.state.isVisible,
     });
   };
-  onDeleteUser = (dispatch, e) => {
+  onDeleteUser = async (dispatch, e) => {
     const { id } = this.props;
+
+    await axios.delete(`http://localhost:3004/users/${id}`);
+
     // Consumer, Dispatch
     dispatch({ type: "DELETE_USER", payload: id });
   };
+
+  componentWillUnmount() {
+    console.log("componentWillUnmount Method Executing");
+  }
+
   render() {
     // Destructing Using
     const { name, age, department } = this.props;
@@ -37,7 +47,7 @@ class User extends Component {
                   className="card"
                   style={
                     isVisible
-                      ? { backgroundColor: "#000", color: "#FFF" }
+                      ? { backgroundColor: "lightgray", color: "#000" }
                       : null
                   }
                 >
@@ -77,7 +87,6 @@ User.propTypes = {
   name: PropTypes.string.isRequired,
   age: PropTypes.string.isRequired,
   department: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
 };
 
 export default User;
