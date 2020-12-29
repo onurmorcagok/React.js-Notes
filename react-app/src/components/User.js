@@ -23,7 +23,7 @@ class User extends Component {
 
     await axios.delete(`http://localhost:3004/users/${id}`);
 
-    // Consumer, Dispatch
+    // Consumer, Dispatch Using
     dispatch({ type: "DELETE_USER", payload: id });
   };
 
