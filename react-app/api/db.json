@@ -13,10 +13,16 @@
       "id": 2
     },
     {
-      "name": "Cihan Öneryıldız",
+      "name": "Cihan ÖNERYILDIZ",
       "age": "21",
-      "department": "Human Resources",
+      "department": "Government Official",
       "id": 3
+    },
+    {
+      "name": "John DOE",
+      "age": "32",
+      "department": "Human Resources",
+      "id": 4
     }
   ]
 }

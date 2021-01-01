@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 
@@ -28,12 +29,12 @@ class User extends Component {
   };
 
   componentWillUnmount() {
-    console.log("componentWillUnmount Method Executing");
+    // console.log("componentWillUnmount Method Executing");
   }
 
   render() {
     // Destructing Using
-    const { name, age, department } = this.props;
+    const { id, name, age, department } = this.props;
     const { isVisible } = this.state;
 
     return (
@@ -65,6 +66,12 @@ class User extends Component {
                     <div className="card-body">
                       <p className="card-text">Age: {age}</p>
                       <p className="card-text">Department: {department}</p>
+                      <Link
+                        to={`updateUser/${id}`}
+                        className="btn btn-dark btn-block"
+                      >
+                        Update User
+                      </Link>
                     </div>
                   ) : null}
                 </div>

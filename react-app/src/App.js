@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "./layout/Navbar";
 import Users from "./components/Users";
-import AddUser from "./components/AddUser";
-import NotFound from "./components/NotFound";
+import AddUser from "./forms/AddUser";
+import UpdateUser from "./forms/UpdateUser";
+import NotFound from "./pages/NotFound";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -16,6 +17,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Users} />
             <Route exact path="/addUser" component={AddUser} />
+            <Route exact path="/updateUser/:id" component={UpdateUser} />
             <Route component={NotFound} />
           </Switch>
         </div>
