@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container">
+        <div className="container mt-3">
           <Navbar title="User App" />
           <hr />
           <Switch>
