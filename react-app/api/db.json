@@ -17,12 +17,6 @@
       "age": "21",
       "department": "Government Official",
       "id": 3
-    },
-    {
-      "name": "John DOE",
-      "age": "32",
-      "department": "Human Resources",
-      "id": 4
     }
   ]
 }
