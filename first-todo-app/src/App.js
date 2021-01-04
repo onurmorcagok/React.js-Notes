@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container col-md-8">
+        <div className="container col-md-6">
           <Navbar title="Todo List App"></Navbar>
           <Switch>
             <Route exact path="/" component={Todos}></Route>
