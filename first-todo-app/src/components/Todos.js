@@ -17,7 +17,8 @@ class Todos extends Component {
                     key={todo.id}
                     id={todo.id}
                     title={todo.title}
-                    completed={todo.completed}
+                    description={todo.description}
+                    status={todo.status}
                   ></Todo>
                 );
               })}

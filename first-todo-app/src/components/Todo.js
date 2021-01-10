@@ -24,11 +24,11 @@ class Todo extends Component {
 
     await axios.delete(`http://localhost:3004/todos/${id}`);
 
-    dispatch({ type: "DELETE_USER", payload: id });
+    dispatch({ type: "DELETE_TODO", payload: id });
   };
 
   render() {
-    const { id, title } = this.props;
+    const { id, title, description, status } = this.props;
     const { isVisible } = this.state;
     return (
       <TodoConsumer>
@@ -57,11 +57,13 @@ class Todo extends Component {
                   </div>
                   {isVisible ? (
                     <div className="card-body">
-                      <p className="card-text">ID: {id}</p>
-                      <p className="card-text">Title: {title}</p>
+                      <p className="card-text">ID: {id} </p>
+                      <p className="card-text">Title: {title} </p>
+                      <p className="card-text">Description: {description} </p>
+                      <p className="card-text">Status: {status} </p>
                       <Link
                         to={`updateTodo/${id}`}
-                        className="btn btn-dark btn-block"
+                        className="btn btn-success btn-block"
                       >
                         Update Todo
                       </Link>
@@ -77,8 +79,6 @@ class Todo extends Component {
   }
 }
 
-export default Todo;
-
 // Todo.defaultProps = {
 //   title: "Nothing Info",
 //   completed: "Nothing Info",
@@ -86,5 +86,7 @@ export default Todo;
 
 Todo.propTypes = {
   title: PropTypes.string.isRequired,
-  completed: PropTypes.bool.isRequired,
+  //completed: PropTypes.bool.isRequired,
 };
+
+export default Todo;

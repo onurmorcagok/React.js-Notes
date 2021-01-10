@@ -1,10 +1,27 @@
-import axios from "axios";
 import React, { Component } from "react";
+import axios from "axios";
 
 const TodoContext = React.createContext();
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "DELETE_TODO":
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => action.payload !== todo.id),
+      };
+    case "ADD_TODO":
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+      };
+    case "UPDATE_TODO":
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id === action.payload.id ? action.payload : todo
+        ),
+      };
     default:
       return state;
   }

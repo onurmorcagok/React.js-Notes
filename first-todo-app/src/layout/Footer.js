@@ -6,7 +6,6 @@ function Footer() {
       <span className="text-white mx-auto my-2">
         Made with by Onur MORCAGÖK - 2021
       </span>
-
       <a href="https://www.linkedin.com/in/onurmorcagok/" target="blank">
         <i className="fab fa-linkedin fa-lg text-white mr-3"></i>
       </a>
