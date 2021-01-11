@@ -49,7 +49,7 @@ class UpdateTodo extends Component {
 
     dispatch({ type: "UPDATE_TODO", payload: response.data });
 
-    //Redirect
+    //Redirect Using
     this.props.history.push("/");
   };
   componentDidMount = async () => {
