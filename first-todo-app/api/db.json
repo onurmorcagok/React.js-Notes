@@ -1,3 +1,10 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "title": "Todo Title",
+      "description": "Todo Description",
+      "status": "Completed",
+      "id": 1
+    }
+  ]
 }
