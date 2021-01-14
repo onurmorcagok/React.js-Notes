@@ -119,7 +119,7 @@ class UpdateTodo extends Component {
                       ></input>
                     </div>
                     <button className="btn btn-danger btn-block" type="submit">
-                      Update Todo
+                    <i class="fas fa-thumbs-up"></i> Save
                     </button>
                   </form>
                 </div>

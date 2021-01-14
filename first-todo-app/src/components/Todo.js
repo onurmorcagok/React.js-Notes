@@ -65,7 +65,8 @@ class Todo extends Component {
                         to={`updateTodo/${id}`}
                         className="btn btn-success btn-block"
                       >
-                        Update Todo
+                        <i class="fas fa-pencil-alt my-auto"></i> Update Todo
+                        
                       </Link>
                     </div>
                   ) : null}
