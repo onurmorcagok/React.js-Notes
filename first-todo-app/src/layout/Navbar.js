@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navbar({ title }) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark my-3 mx-3">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-4 my-3 mx-3">
       <a href="/" className="navbar-brand">
         <i className="fas fa-check-circle"></i> {title}
       </a>
