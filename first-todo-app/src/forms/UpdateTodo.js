@@ -17,6 +17,7 @@ class UpdateTodo extends Component {
   validateForm = () => {
     const { title, description, status } = this.state;
 
+    //Validation
     if (title === "" || description === "" || status === "") {
       return false;
     } else {
@@ -119,7 +120,7 @@ class UpdateTodo extends Component {
                       ></input>
                     </div>
                     <button className="btn btn-danger btn-block" type="submit">
-                    <i class="fas fa-thumbs-up"></i> Save
+                      <i class="fas fa-thumbs-up"></i> Save
                     </button>
                   </form>
                 </div>
