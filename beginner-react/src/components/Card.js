@@ -3,7 +3,7 @@ import React from "react";
 const Card = (props) => {
   return (
     <div>
-      <div className="card align-items-center">
+      <div className="card">
         <img src={props.cardImage} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{props.cardTitle}</h5>
