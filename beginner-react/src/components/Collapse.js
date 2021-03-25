@@ -4,7 +4,7 @@ const Collapse = (props) => {
   return (
     <div className="container">
       <a
-        className="btn btn-primary"
+        className="btn btn-primary w-100"
         data-bs-toggle="collapse"
         href={"#".concat(props.href)}
         role="button"

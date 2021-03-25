@@ -22,7 +22,7 @@ const App = () => {
           <div className="col">
             <Collapse href="collapsExample2">
               <Card
-                cardTitle="Card Title II"
+                // cardTitle="Card Title II"
                 cardText="Card Text II"
                 updateTime="Last updated 15 min ago"
                 cardImage="https://via.placeholder.com/350x150"
