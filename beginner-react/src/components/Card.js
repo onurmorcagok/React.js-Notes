@@ -31,8 +31,8 @@ Card.defaultProps = {
 // PropTypes
 
 Card.propTypes = {
-  cardText: PropTypes.string,
-  // cardText: PropTypes.string.isRequired
+  // cardText: PropTypes.string,
+  cardText: PropTypes.string.isRequired,
 };
 
 export default Card;
