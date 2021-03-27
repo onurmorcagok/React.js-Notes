@@ -11,6 +11,14 @@ class Collapse extends Component {
     });
   };
 
+  componentDidMount() {
+    console.log("componentDidMount");
+  }
+
+  componentDidUpdate() {
+    console.log("componentDidUpdate");
+  }
+
   render() {
     return (
       <div className="container">
