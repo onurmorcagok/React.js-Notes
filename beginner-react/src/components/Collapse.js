@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 
 class Collapse extends Component {
-  state = {
-    isShow: false,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isShow: false,
+    };
+
+    // console.log("constructor");
+  }
 
   showDetail = () => {
     this.setState({
@@ -11,19 +17,24 @@ class Collapse extends Component {
     });
   };
 
-  componentDidMount() {
-    console.log("componentDidMount");
-  }
+  // componentDidMount() {
+  //   console.log("componentDidMount");
+  // }
 
-  componentDidUpdate() {
-    console.log("componentDidUpdate");
-  }
+  // componentDidUpdate() {
+  //   console.log("componentDidUpdate");
+  // }
 
   render() {
+    // console.log("render");
     return (
       <div className="container">
         <button onClick={this.showDetail} className="btn btn-success w-100">
-          Card Button
+          {/* {this.props.children.props.cardTitle} */}
+          {React.Children.map(
+            this.props.children,
+            (children) => children.props.cardTitle
+          )}
         </button>
         {this.state.isShow ? (
           <div className="collapse show">

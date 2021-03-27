@@ -15,17 +15,17 @@ const App = () => {
                 cardTitle="Card Title I"
                 cardText="Card Text I"
                 updateTime="Last updated 10 min ago"
-                cardImage="https://via.placeholder.com/350x150"
+                cardImage="https://picsum.photos/id/1/200/300"
               />
             </Collapse>
           </div>
           <div className="col">
             <Collapse href="collapsExample2">
               <Card
-                // cardTitle="Card Title II"
+                cardTitle="Card Title II"
                 cardText="Card Text II"
                 updateTime="Last updated 15 min ago"
-                cardImage="https://via.placeholder.com/350x150"
+                cardImage="https://picsum.photos/id/1/200/300"
               />
             </Collapse>
           </div>
@@ -35,7 +35,7 @@ const App = () => {
                 cardTitle="Card Title III"
                 cardText="Card Text III"
                 updateTime="Last updated 20 min ago"
-                cardImage="https://via.placeholder.com/350x150"
+                cardImage="https://picsum.photos/id/1/200/300"
               />
             </Collapse>
           </div>
