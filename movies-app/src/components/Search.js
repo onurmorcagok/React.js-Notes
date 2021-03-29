@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+// Class Component
 class Search extends Component {
   render() {
     return (
@@ -7,7 +8,7 @@ class Search extends Component {
         <input
           className="form-control"
           type="text"
-          placeholder="Search Movie"
+          placeholder="Search a Movie"
         ></input>
       </div>
     );
