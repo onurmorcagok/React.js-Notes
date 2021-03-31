@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+// Class Component
 class Search extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
