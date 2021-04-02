@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Search from "./Search";
 import MovieList from "./MovieList";
 
+// App.js - Class Component
+
 class App extends Component {
   state = {
     movies: [
