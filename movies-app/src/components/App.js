@@ -2,79 +2,62 @@ import React, { Component } from "react";
 
 import Search from "./Search";
 import MovieList from "./MovieList";
+import axios from "axios";
 
 // App.js - Class Component
 
 class App extends Component {
   state = {
-    movies: [
-      {
-        id: 1,
-        name: "Troy",
-        rating: "7.2",
-        summary:
-          "While the Civil War rages between the Union and the Confederacy, three men – a quiet loner, a ruthless hit man and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
-        imageURL:
-          "https://image.tmdb.org/t/p/original//zda0VWRKHnUSX7B7NOPqVUlu9zK.jpg",
-      },
-      {
-        id: 2,
-        name: "The Godfather",
-        rating: "9",
-        summary:
-          "While the Civil War rages between the Union and the Confederacy, three men – a quiet loner, a ruthless hit man and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
-        imageURL:
-          "https://image.tmdb.org/t/p/original//3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
-      },
-      {
-        id: 3,
-        name: "The Good, the Bad and the Ugly",
-        rating: "8.5",
-        summary:
-          "While the Civil War rages between the Union and the Confederacy, three men – a quiet loner, a ruthless hit man and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
-        imageURL:
-          "https://image.tmdb.org/t/p/original//eWivEg4ugIMAd7d4uWI37b17Cgj.jpg",
-      },
-      {
-        id: 4,
-        name: "The Mask of Zorro",
-        rating: "6.5",
-        summary:
-          "While the Civil War rages between the Union and the Confederacy, three men – a quiet loner, a ruthless hit man and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
-        imageURL:
-          "https://image.tmdb.org/t/p/original//bdMufwGDDzqu4kTSQwrKc5WR4bu.jpg",
-      },
-      {
-        id: 5,
-        name: "The Shawshank Redemption",
-        rating: "8.8",
-        summary:
-          "While the Civil War rages between the Union and the Confederacy, three men – a quiet loner, a ruthless hit man and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
-        imageURL:
-          "https://image.tmdb.org/t/p/original//q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
-      },
-      {
-        id: 6,
-        name: "Pirates of the Caribbean: The Curse of the Black Pearl",
-        rating: "7.7",
-        summary:
-          "While the Civil War rages between the Union and the Confederacy, three men – a quiet loner, a ruthless hit man and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
-        imageURL:
-          "https://image.tmdb.org/t/p/original//z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
-      },
-    ],
-
+    movies: [],
     searchMovie: "",
   };
 
-  deleteMovie = (movie) => {
+  // FETCH API
+
+  // async componentDidMount() {
+  //   const baseURL = "http://localhost:3001/movies";
+  //   const response = await fetch(baseURL);
+  //   // console.log(response);
+  //   const data = await response.json();
+  //   // console.log(data);
+
+  //   this.setState({
+  //     movies: data,
+  //   });
+  // }
+
+  // FETCH API
+
+  // deleteMovie = async (movie) => {
+  //   const baseURL = `http://localhost:3001/movies/${movie.id}`;
+
+  //   await fetch(baseURL, {
+  //     method: "DELETE",
+  //   });
+
+  //   const newMovieList = this.state.movies.filter((m) => m.id !== movie.id);
+
+  //   this.setState(() => ({
+  //     movies: newMovieList,
+  //   }));
+
+  //   console.log("Movie is removed!");
+  // };
+
+  async componentDidMount() {
+    const response = await axios.get("http://localhost:3001/movies");
+
+    this.setState({
+      movies: response.data,
+    });
+  }
+
+  deleteMovie = async (movie) => {
+    axios.delete(`http://localhost:3001/movies/${movie.id}`);
+
     const newMovieList = this.state.movies.filter((m) => m.id !== movie.id);
 
-    // this.setState({
-    //   movies: newMovieList,
-    // });
-
-    this.setState((state) => ({
+    this.setState(() => ({
       movies: newMovieList,
     }));
 
