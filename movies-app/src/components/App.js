@@ -44,6 +44,7 @@ class App extends Component {
   //   console.log("Movie is removed!");
   // };
 
+  // AXIOS
   async componentDidMount() {
     const response = await axios.get("http://localhost:3001/movies");
 
@@ -52,6 +53,7 @@ class App extends Component {
     });
   }
 
+  // AXIOS
   deleteMovie = async (movie) => {
     axios.delete(`http://localhost:3001/movies/${movie.id}`);
 
