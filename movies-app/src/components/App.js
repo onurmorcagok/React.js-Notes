@@ -4,7 +4,7 @@ import Search from "./Search";
 import MovieList from "./MovieList";
 import axios from "axios";
 
-// App.js - Class Component
+// App.js = Class Component
 
 class App extends Component {
   state = {
