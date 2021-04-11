@@ -2,6 +2,8 @@ import React from "react";
 
 // Functional Component
 
+// Nothing render() function
+
 const MovieList = (props) => {
   return (
     <div className="row">
