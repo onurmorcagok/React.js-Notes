@@ -26,8 +26,6 @@ class App extends Component {
   //   });
   // }
 
-  // FETCH API
-
   // deleteMovie = async (movie) => {
   //   const baseURL = `http://localhost:3001/movies/${movie.id}`;
 
@@ -45,6 +43,7 @@ class App extends Component {
   // };
 
   // AXIOS
+
   async componentDidMount() {
     const response = await axios.get("http://localhost:3001/movies");
 
