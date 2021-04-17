@@ -4,25 +4,30 @@ import Search from "./Search";
 import MovieList from "./MovieList";
 import axios from "axios";
 
+require("dotenv").config();
+
 class App extends Component {
   state = {
     movies: [],
     searchMovie: "",
   };
 
-  // AXIOS
-
   async componentDidMount() {
-    const response = await axios.get("http://localhost:3001/movies");
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/list/7092933?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+    );
+
+    console.log(response.data.items);
 
     this.setState({
-      movies: response.data,
+      movies: response.data.items,
     });
   }
 
-  // AXIOS
   deleteMovie = async (movie) => {
-    axios.delete(`http://localhost:3001/movies/${movie.id}`);
+    axios.post(
+      `https://api.themoviedb.org/3/list/7092933/remove_item?media_id=${movie.id}&session_id=${process.env.REACT_APP_SESSION_ID}&api_key=${process.env.REACT_APP_API_KEY}`
+    );
 
     const newMovieList = this.state.movies.filter((m) => m.id !== movie.id);
 
@@ -30,7 +35,7 @@ class App extends Component {
       movies: newMovieList,
     }));
 
-    console.log("Movie is removed!");
+    console.log("Selected movie is removed!");
   };
 
   searcMovieFunc = (e) => {
@@ -44,7 +49,7 @@ class App extends Component {
   render() {
     let filterMovies = this.state.movies.filter((movie) => {
       return (
-        movie.name
+        movie.title
           .toLowerCase()
           .indexOf(this.state.searchMovie.toLowerCase()) !== -1
       );
