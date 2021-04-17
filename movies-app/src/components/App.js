@@ -5,7 +5,6 @@ import MovieList from "./MovieList";
 import axios from "axios";
 
 require("dotenv").config();
-
 class App extends Component {
   state = {
     movies: [],
@@ -16,8 +15,6 @@ class App extends Component {
     const response = await axios.get(
       `https://api.themoviedb.org/3/list/7092933?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
-
-    console.log(response.data.items);
 
     this.setState({
       movies: response.data.items,
