@@ -4,45 +4,11 @@ import Search from "./Search";
 import MovieList from "./MovieList";
 import axios from "axios";
 
-// App.js = Class Component
-
 class App extends Component {
   state = {
     movies: [],
     searchMovie: "",
   };
-
-  // FETCH API
-
-  // async componentDidMount() {
-  //   const baseURL = "http://localhost:3001/movies";
-  //   const response = await fetch(baseURL);
-  //   // console.log(response);
-  //   const data = await response.json();
-  //   // console.log(data);
-
-  //   this.setState({
-  //     movies: data,
-  //   });
-  // }
-
-  // deleteMovie = async (movie) => {
-  //   const baseURL = `http://localhost:3001/movies/${movie.id}`;
-
-  //   await fetch(baseURL, {
-  //     method: "DELETE",
-  //   });
-
-  //   const newMovieList = this.state.movies.filter((m) => m.id !== movie.id);
-
-  //   this.setState(() => ({
-  //     movies: newMovieList,
-  //   }));
-
-  //   console.log("Movie is removed!");
-  // };
-
-  // AXIOS
 
   async componentDidMount() {
     const response = await axios.get("http://localhost:3001/movies");
@@ -52,7 +18,6 @@ class App extends Component {
     });
   }
 
-  // AXIOS
   deleteMovie = async (movie) => {
     axios.delete(`http://localhost:3001/movies/${movie.id}`);
 
@@ -66,8 +31,6 @@ class App extends Component {
   };
 
   searcMovieFunc = (e) => {
-    // console.log(e.target.value);
-
     this.setState({
       searchMovie: e.target.value,
     });
