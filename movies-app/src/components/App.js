@@ -34,10 +34,17 @@ class App extends Component {
     console.log("Movie is removed!");
   };
 
-  searcMovieFunc = (e) => {
+  searcMovie = (e) => {
     this.setState({
       searchMovie: e.target.value,
     });
+  };
+
+  addMovie = async (movie) => {
+    await axios.post(`http://localhost:3001/movies/`, movie);
+    this.setState((state) => ({
+      movies: state.movies.concat([movie]),
+    }));
   };
 
   render() {
@@ -60,7 +67,7 @@ class App extends Component {
                 <React.Fragment>
                   <div className="row">
                     <div className="col-lg-12">
-                      <Search searchMovieProps={this.searcMovieFunc} />
+                      <Search searchMovieProps={this.searcMovie} />
                     </div>
                   </div>
                   <MovieList
@@ -70,7 +77,18 @@ class App extends Component {
                 </React.Fragment>
               )}
             ></Route>
-            <Route path="/add" component={AddMovie} />
+
+            <Route
+              path="/add"
+              render={({ history }) => (
+                <AddMovie
+                  onAddMovie={(movie) => {
+                    this.addMovie(movie);
+                    history.push("/");
+                  }}
+                />
+              )}
+            ></Route>
           </Switch>
         </div>
       </Router>

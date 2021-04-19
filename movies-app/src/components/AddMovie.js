@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 
+import serialize from "form-serialize";
+
 class AddMovie extends Component {
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    const newMovie = serialize(e.target, { hash: true });
+    // console.log(newMovie);
+    this.props.onAddMovie(newMovie);
+  };
+
   render() {
     return (
       <div className="container">

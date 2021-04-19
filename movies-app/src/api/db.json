@@ -1,25 +1,25 @@
 {
   "movies": [
     {
-      "id": 1,
-      "name": "Troy",
-      "rating": "7.2",
-      "summary": "While the Civil War rages between the Union and the Confederacy, three men – a quiet loner, a ruthless hit man and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
-      "imageURL": "https://image.tmdb.org/t/p/original//zda0VWRKHnUSX7B7NOPqVUlu9zK.jpg"
+      "name": "The Dark Knight",
+      "rating": "7.5",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      "overview": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
+      "id": 4
     },
     {
-      "id": 2,
-      "name": "The Godfather",
+      "name": "Titanic",
+      "rating": "8.2",
+      "imageURL": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+      "overview": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fiancé. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death—on its first and last voyage—on April 15, 1912.",
+      "id": 5
+    },
+    {
+      "name": "Saving Private Ryan",
       "rating": "9",
-      "summary": "While the Civil War rages between the Union and the Confederacy, three men – a quiet loner, a ruthless hit man and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
-      "imageURL": "https://image.tmdb.org/t/p/original//3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
-    },
-    {
-      "id": 3,
-      "name": "The Good, the Bad and the Ugly",
-      "rating": "8.5",
-      "summary": "While the Civil War rages between the Union and the Confederacy, three men – a quiet loner, a ruthless hit man and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
-      "imageURL": "https://image.tmdb.org/t/p/original//eWivEg4ugIMAd7d4uWI37b17Cgj.jpg"
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1wY4psJ5NVEhCuOYROwLH2XExM2.jpg",
+      "overview": "As U.S. troops storm the beaches of Normandy, three brothers lie dead on the battlefield, with a fourth trapped behind enemy lines. Ranger captain John Miller and seven men are tasked with penetrating German-held territory and bringing the boy home.",
+      "id": 6
     }
   ]
 }
