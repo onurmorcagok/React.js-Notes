@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 import Search from "./Search";
 import MovieList from "./MovieList";
+import AddMovie from "./AddMovie";
+
 import axios from "axios";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -46,14 +50,30 @@ class App extends Component {
     });
 
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <Search searchMovieProps={this.searcMovieFunc} />
-          </div>
+      <Router>
+        <div className="container">
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={() => (
+                <React.Fragment>
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <Search searchMovieProps={this.searcMovieFunc} />
+                    </div>
+                  </div>
+                  <MovieList
+                    movies={filterMovies}
+                    deleteMovieProps={this.deleteMovie}
+                  />
+                </React.Fragment>
+              )}
+            ></Route>
+            <Route path="/add" component={AddMovie} />
+          </Switch>
         </div>
-        <MovieList movies={filterMovies} deleteMovieProps={this.deleteMovie} />
-      </div>
+      </Router>
     );
   }
 }
