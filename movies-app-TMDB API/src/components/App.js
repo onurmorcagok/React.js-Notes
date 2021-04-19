@@ -4,57 +4,27 @@ import Search from "./Search";
 import MovieList from "./MovieList";
 import axios from "axios";
 
-// App.js = Class Component
-
+require("dotenv").config();
 class App extends Component {
   state = {
     movies: [],
     searchMovie: "",
   };
 
-  // FETCH API
-
-  // async componentDidMount() {
-  //   const baseURL = "http://localhost:3001/movies";
-  //   const response = await fetch(baseURL);
-  //   // console.log(response);
-  //   const data = await response.json();
-  //   // console.log(data);
-
-  //   this.setState({
-  //     movies: data,
-  //   });
-  // }
-
-  // deleteMovie = async (movie) => {
-  //   const baseURL = `http://localhost:3001/movies/${movie.id}`;
-
-  //   await fetch(baseURL, {
-  //     method: "DELETE",
-  //   });
-
-  //   const newMovieList = this.state.movies.filter((m) => m.id !== movie.id);
-
-  //   this.setState(() => ({
-  //     movies: newMovieList,
-  //   }));
-
-  //   console.log("Movie is removed!");
-  // };
-
-  // AXIOS
-
   async componentDidMount() {
-    const response = await axios.get("http://localhost:3001/movies");
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/list/7092933?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+    );
 
     this.setState({
-      movies: response.data,
+      movies: response.data.items,
     });
   }
 
-  // AXIOS
   deleteMovie = async (movie) => {
-    axios.delete(`http://localhost:3001/movies/${movie.id}`);
+    axios.post(
+      `https://api.themoviedb.org/3/list/7092933/remove_item?media_id=${movie.id}&session_id=${process.env.REACT_APP_SESSION_ID}&api_key=${process.env.REACT_APP_API_KEY}`
+    );
 
     const newMovieList = this.state.movies.filter((m) => m.id !== movie.id);
 
@@ -62,7 +32,7 @@ class App extends Component {
       movies: newMovieList,
     }));
 
-    console.log("Movie is removed!");
+    console.log("Selected movie is removed!");
   };
 
   searcMovieFunc = (e) => {
@@ -76,7 +46,7 @@ class App extends Component {
   render() {
     let filterMovies = this.state.movies.filter((movie) => {
       return (
-        movie.name
+        movie.title
           .toLowerCase()
           .indexOf(this.state.searchMovie.toLowerCase()) !== -1
       );
