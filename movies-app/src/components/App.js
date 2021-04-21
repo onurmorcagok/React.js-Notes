@@ -31,7 +31,7 @@ class App extends Component {
       movies: newMovieList,
     }));
 
-    console.log("Movie is removed!");
+    console.log("Selected movie is removed!");
   };
 
   searcMovie = (e) => {
@@ -42,6 +42,7 @@ class App extends Component {
 
   addMovie = async (movie) => {
     await axios.post(`http://localhost:3001/movies/`, movie);
+
     this.setState((state) => ({
       movies: state.movies.concat([movie]),
     }));
