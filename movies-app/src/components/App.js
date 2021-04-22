@@ -49,13 +49,17 @@ class App extends Component {
   };
 
   render() {
-    let filterMovies = this.state.movies.filter((movie) => {
-      return (
-        movie.name
-          .toLowerCase()
-          .indexOf(this.state.searchMovie.toLowerCase()) !== -1
-      );
-    });
+    let filterMovies = this.state.movies
+      .filter((movie) => {
+        return (
+          movie.name
+            .toLowerCase()
+            .indexOf(this.state.searchMovie.toLowerCase()) !== -1
+        );
+      })
+      .sort((a, b) => {
+        return a.id < b.id ? 1 : b.id < a.id ? -1 : 0;
+      });
 
     return (
       <Router>

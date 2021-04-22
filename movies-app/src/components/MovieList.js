@@ -1,10 +1,12 @@
 import React from "react";
 
-// Functional Component
-
-// Nothing render() function
-
 const MovieList = (props) => {
+  const truncateOverview = (string, maxLength) => {
+    if (!string) return null;
+    if (string.length <= maxLength) return string;
+    return `${string.substring(0, maxLength)} ...`;
+  };
+
   return (
     <div className="row">
       {props.movies.map((movie, i) => (
@@ -17,7 +19,9 @@ const MovieList = (props) => {
             />
             <div className="card-body">
               <h5 className="card-title">{movie.name}</h5>
-              <p className="card-description">{movie.overview}</p>
+              <p className="card-description">
+                {truncateOverview(movie.overview, 150)}
+              </p>
               <div className="d-flex justify-content-between align-items-center">
                 <button
                   onClick={(e) => props.deleteMovieProps(movie)}
