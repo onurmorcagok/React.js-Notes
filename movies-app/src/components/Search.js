@@ -24,8 +24,8 @@ class Search extends Component {
             <Link
               to="/add"
               type="button"
-              className="btn btn-md btn-warning"
-              style={{ float: "right" }}
+              className="btn btn-md btn-primary"
+              style={{ float: "right", width: "150px" }}
             >
               Add Movie
             </Link>

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Search from "./Search";
 import MovieList from "./MovieList";
 import AddMovie from "./AddMovie";
+import EditMovie from "./EditMovie";
 
 import axios from "axios";
 
@@ -93,6 +94,11 @@ class App extends Component {
                   }}
                 />
               )}
+            ></Route>
+
+            <Route
+              path="/edit/:id" // Dynamic Parameter
+              component={EditMovie}
             ></Route>
           </Switch>
         </div>

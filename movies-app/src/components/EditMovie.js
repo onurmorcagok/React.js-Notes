@@ -1,16 +1,37 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import { Link } from "react-router-dom";
 
-import serialize from "form-serialize";
+class EditMovie extends Component {
+  state = {
+    name: "",
+    rating: "",
+    imageURL: "",
+    overview: "",
+  };
 
-class AddMovie extends Component {
+  async componentDidMount() {
+    const id = this.props.match.params.id;
+
+    // console.log(id);
+
+    const response = await axios.get(`http://localhost:3001/movies/${id}`);
+
+    // console.log(response.data);
+
+    const movie = response.data;
+
+    this.setState({
+      name: movie.name,
+      rating: movie.rating,
+      imageURL: movie.imageURL,
+      overview: movie.overview,
+    });
+  }
+
   handleFormSubmit = (e) => {
     e.preventDefault();
-
-    const newMovie = serialize(e.target, { hash: true });
-    // console.log(newMovie);
-    this.props.onAddMovie(newMovie);
   };
 
   render() {
@@ -25,22 +46,37 @@ class AddMovie extends Component {
           >
             Return Home Page
           </Link>
-          <h4>Fill The Form To Add A Movie !</h4>
+          <h4>Edit Form To Update Selected Movie !</h4>
           <hr />
           <div className="form-row">
             <div className="form-group col-md-10">
               <label htmlFor="inputName">Name</label>
-              <input type="text" className="form-control" name="name" />
+              <input
+                type="text"
+                className="form-control"
+                name="name"
+                value={this.state.name}
+              />
             </div>
             <div className="form-group col-md-2">
               <label htmlFor="inputRating">Rating</label>
-              <input type="text" className="form-control" name="rating" />
+              <input
+                type="text"
+                className="form-control"
+                name="rating"
+                value={this.state.rating}
+              />
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-12">
               <label htmlFor="inputImage">Image URL</label>
-              <input type="text" className="form-control" name="imageURL" />
+              <input
+                type="text"
+                className="form-control"
+                name="imageURL"
+                value={this.state.imageURL}
+              />
             </div>
           </div>
           <div className="form-row">
@@ -50,13 +86,14 @@ class AddMovie extends Component {
                 className="form-control"
                 name="overview"
                 rows="5"
+                value={this.state.overview}
               ></textarea>
             </div>
           </div>
           <input
             type="submit"
             className="btn btn-success btn-block"
-            value="Add Movie"
+            value="Edit Movie"
           />
         </form>
       </div>
@@ -64,4 +101,4 @@ class AddMovie extends Component {
   }
 }
 
-export default AddMovie;
+export default EditMovie;

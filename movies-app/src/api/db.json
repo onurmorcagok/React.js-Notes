@@ -8,32 +8,18 @@
       "id": 4
     },
     {
-      "name": "Titanic",
-      "rating": "8.2",
-      "imageURL": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
-      "overview": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fiancé. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death—on its first and last voyage—on April 15, 1912.",
-      "id": 5
-    },
-    {
-      "name": "Saving Private Ryan",
-      "rating": "9",
-      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1wY4psJ5NVEhCuOYROwLH2XExM2.jpg",
-      "overview": "As U.S. troops storm the beaches of Normandy, three brothers lie dead on the battlefield, with a fourth trapped behind enemy lines. Ranger captain John Miller and seven men are tasked with penetrating German-held territory and bringing the boy home.",
-      "id": 6
-    },
-    {
-      "name": "The Godfather",
-      "rating": "9.2",
-      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
-      "overview": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
-      "id": 7
-    },
-    {
-      "name": "The Good, the Bad and the Ugly ",
+      "name": "The Good, the Bad and the Ugly",
       "rating": "8.8",
       "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eWivEg4ugIMAd7d4uWI37b17Cgj.jpg",
       "overview": "While the Civil War rages between the Union and the Confederacy, three men – a quiet loner, a ruthless hit man and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.\n\n",
-      "id": 8
+      "id": 5
+    },
+    {
+      "name": "The Godfather",
+      "rating": "9",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+      "overview": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.\n\n",
+      "id": 6
     }
   ]
 }
