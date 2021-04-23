@@ -16,10 +16,10 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.newMovieList();
+    this.getMovieList();
   }
 
-  async newMovieList() {
+  async getMovieList() {
     const response = await axios.get("http://localhost:3001/movies");
 
     this.setState({
