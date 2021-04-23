@@ -15,7 +15,11 @@ class App extends Component {
     searchMovie: "",
   };
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.newMovieList();
+  }
+
+  async newMovieList() {
     const response = await axios.get("http://localhost:3001/movies");
 
     this.setState({
@@ -47,6 +51,14 @@ class App extends Component {
     this.setState((state) => ({
       movies: state.movies.concat([movie]),
     }));
+
+    this.newMovieList();
+  };
+
+  editMovie = async (id, updatedMovie) => {
+    await axios.put(`http://localhost:3001/movies/${id}`, updatedMovie);
+
+    this.newMovieList();
   };
 
   render() {
@@ -97,8 +109,15 @@ class App extends Component {
             ></Route>
 
             <Route
-              path="/edit/:id" // Dynamic Parameter
-              component={EditMovie}
+              path="/edit/:id"
+              render={(props) => (
+                <EditMovie
+                  {...props}
+                  onEditMovie={(id, movie) => {
+                    this.editMovie(id, movie);
+                  }}
+                />
+              )}
             ></Route>
           </Switch>
         </div>

@@ -1,13 +1,6 @@
 {
   "movies": [
     {
-      "name": "The Dark Knight",
-      "rating": "7.5",
-      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-      "overview": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
-      "id": 4
-    },
-    {
       "name": "The Good, the Bad and the Ugly",
       "rating": "8.8",
       "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eWivEg4ugIMAd7d4uWI37b17Cgj.jpg",
@@ -15,11 +8,39 @@
       "id": 5
     },
     {
-      "name": "The Godfather",
-      "rating": "9",
-      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+      "name": "The Godfather: Part II",
+      "rating": "8.6",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg",
       "overview": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.\n\n",
       "id": 6
+    },
+    {
+      "name": "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "rating": "7.7",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
+      "overview": "Jack Sparrow, a freewheeling 18th-century pirate, quarrels with a rival pirate bent on pillaging Port Royal. When the governor's daughter is kidnapped, Sparrow decides to help the girl's love save her.\n\n",
+      "id": 8
+    },
+    {
+      "name": "Fury",
+      "rating": "7.5",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pfte7wdMobMF4CVHuOxyu6oqeeA.jpg",
+      "overview": "In the last months of World War II, as the Allies make their final push in the European theatre, a battle-hardened U.S. Army sergeant named 'Wardaddy' commands a Sherman tank called 'Fury' and its five-man crew on a deadly mission behind enemy lines. Outnumbered and outgunned, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.\n\n",
+      "id": 9
+    },
+    {
+      "name": "The Pianist",
+      "rating": "8.5",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3DzePKMbLMIM636S6syCy3cLPqj.jpg",
+      "overview": "The true story of pianist Władysław Szpilman's experiences in Warsaw during the Nazi occupation. When the Jews of the city find themselves forced into a ghetto, Szpilman finds work playing in a café; and when his family is deported in 1942, he stays behind, works for a while as a laborer, and eventually goes into hiding in the ruins of the war-torn city.\n\n",
+      "id": 10
+    },
+    {
+      "name": "Saving Private Ryan",
+      "rating": "8.2",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1wY4psJ5NVEhCuOYROwLH2XExM2.jpg",
+      "overview": "As U.S. troops storm the beaches of Normandy, three brothers lie dead on the battlefield, with a fourth trapped behind enemy lines. Ranger captain John Miller and seven men are tasked with penetrating German-held territory and bringing the boy home.\n\n",
+      "id": 11
     }
   ]
 }

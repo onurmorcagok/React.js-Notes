@@ -32,6 +32,27 @@ class EditMovie extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
+
+    const { name, rating, imageURL, overview } = this.state;
+
+    const id = this.props.match.params.id;
+
+    const updatedMovie = {
+      name,
+      rating,
+      imageURL,
+      overview,
+    };
+
+    this.props.onEditMovie(id, updatedMovie);
+
+    this.props.history.push("/");
+  };
+
+  onInputChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
   };
 
   render() {
@@ -56,6 +77,7 @@ class EditMovie extends Component {
                 className="form-control"
                 name="name"
                 value={this.state.name}
+                onChange={this.onInputChange}
               />
             </div>
             <div className="form-group col-md-2">
@@ -65,6 +87,7 @@ class EditMovie extends Component {
                 className="form-control"
                 name="rating"
                 value={this.state.rating}
+                onChange={this.onInputChange}
               />
             </div>
           </div>
@@ -76,6 +99,7 @@ class EditMovie extends Component {
                 className="form-control"
                 name="imageURL"
                 value={this.state.imageURL}
+                onChange={this.onInputChange}
               />
             </div>
           </div>
@@ -87,6 +111,7 @@ class EditMovie extends Component {
                 name="overview"
                 rows="5"
                 value={this.state.overview}
+                onChange={this.onInputChange}
               ></textarea>
             </div>
           </div>
