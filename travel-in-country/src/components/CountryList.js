@@ -17,7 +17,7 @@ const CountryList = (props) => {
               </h3>
               <h6 className="card-code">Code: {country.alpha3Code}</h6>
               <h6 className="card-population">
-                Population: {country.population}
+                Population: {country.population.toLocaleString("en-US")}
               </h6>
               <h6 className="card-capital">Capital: {country.capital}</h6>
               <h6 className="card-languages">
