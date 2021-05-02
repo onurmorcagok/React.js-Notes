@@ -21,7 +21,8 @@ const CountryList = (props) => {
               </h6>
               <h6 className="card-capital">Capital: {country.capital}</h6>
               <h6 className="card-languages">
-                Languages: {country.languages.map((l) => `${l.name}`)}
+                Languages:{" "}
+                {country.languages.map((l) => `${l.name}`).join(", ")}
               </h6>
               <h6 className="card-currencies">
                 Currencies:{" "}
