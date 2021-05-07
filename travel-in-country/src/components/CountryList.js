@@ -1,5 +1,7 @@
 import React from "react";
 
+// Functional Component
+
 const CountryList = (props) => {
   return (
     <div className="row">
