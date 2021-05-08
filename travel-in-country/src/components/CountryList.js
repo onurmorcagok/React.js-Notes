@@ -33,6 +33,11 @@ const CountryList = (props) => {
               <h6 className="card-region">
                 Region: {country.region} / {country.subregion}
               </h6>
+              <div className="d-flex justify-content-between align-items-center">
+                <h2>
+                  <span className="badge badge-warning">ONUR</span>
+                </h2>
+              </div>
             </div>
           </div>
         </div>
