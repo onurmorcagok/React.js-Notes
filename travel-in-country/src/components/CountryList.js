@@ -15,7 +15,7 @@ const CountryList = (props) => {
               src={country.flag}
               className="card-img-top"
               alt="Country Flag"
-              style={{ height: "200px" }}
+              style={{ height: "230px" }}
             />
             <div className="card-body">
               <div
