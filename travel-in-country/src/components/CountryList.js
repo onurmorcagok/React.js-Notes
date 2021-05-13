@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 // Functional Component
 
 const CountryList = (props) => {
@@ -9,7 +11,7 @@ const CountryList = (props) => {
         <div className="col-lg-4" key={id}>
           <div
             className="card mb-4 shadow-sm"
-            style={{ height: "600px", textAlign: "center" }}
+            style={{ height: "750px", textAlign: "center" }}
           >
             <img
               src={country.flag}
@@ -52,6 +54,22 @@ const CountryList = (props) => {
               <h6 className="card-region">
                 Region: {country.region} / {country.subregion}
               </h6>
+              <hr />
+              <div className="d-flex justify-content-between align-items-center">
+                <button className="btn btn-md btn-outline-danger">
+                  <i className="fas fa-heart"></i>
+                </button>
+                <Link to="/add" type="button" className="btn btn-md btn-info">
+                  <i className="fas fa-comment"></i>
+                </Link>
+                <Link
+                  to={`/edit/${country.name}`}
+                  type="button"
+                  className="btn btn-md btn-success"
+                >
+                  <i className="fas fa-user-edit"></i>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

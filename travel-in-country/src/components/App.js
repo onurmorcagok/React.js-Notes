@@ -2,8 +2,11 @@ import React, { Component } from "react";
 
 import CountryList from "./CountryList";
 import SearchCountry from "./SearchCountry";
+import Navbar from "./Navbar";
 
 import axios from "axios";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -39,10 +42,27 @@ class App extends Component {
     });
 
     return (
-      <div className="container">
-        <SearchCountry searchCountryProps={this.searchCountry} />
-        <CountryList countries={filterCountries} />
-      </div>
+      <Router>
+        <div className="container">
+          <Navbar />
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={() => (
+                <React.Fragment>
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <SearchCountry searchCountryProps={this.searchCountry} />
+                    </div>
+                  </div>
+                  <CountryList countries={filterCountries} />
+                </React.Fragment>
+              )}
+            ></Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
