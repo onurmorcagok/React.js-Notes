@@ -6,7 +6,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            <b>Country in Travel</b>
+            <b>Country In Travel</b>
           </a>
           <button
             className="navbar-toggler"
