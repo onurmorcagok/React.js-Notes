@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+// Class Component
+
 class Navbar extends Component {
   render() {
     return (

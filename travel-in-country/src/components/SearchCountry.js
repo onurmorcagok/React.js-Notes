@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+// Class Component
+
 class SearchCountry extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
