@@ -56,7 +56,11 @@ const CountryList = (props) => {
               </h6>
               <hr />
               <div className="d-flex justify-content-between align-items-center">
-                <Link to="/add" type="button" className="btn btn-md btn-info">
+                <Link
+                  to={`/add/${country.name}`}
+                  type="button"
+                  className="btn btn-md btn-info"
+                >
                   <i className="fas fa-comment"></i>
                 </Link>
                 <Link
