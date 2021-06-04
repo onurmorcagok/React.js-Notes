@@ -5,7 +5,7 @@ import React, { Component } from "react";
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-warning">
+      <nav className="navbar navbar-expand-lg navbar-light bg-warning my-3">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             <b>Country in Travel</b>
