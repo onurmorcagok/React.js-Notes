@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import Book from "./Book";
 
-import BookContext from '../contexts/BookContext';
+import BookContext from "../contexts/BookContext";
 
 import "./BookList.css";
 class BookList extends Component {
-
   static contextType = BookContext;
 
   render() {
-
-    // console.log(this.context);
+    console.log(this.context);
 
     const books = this.context;
 
@@ -22,14 +20,12 @@ class BookList extends Component {
             <h3 className="section-subheading text-muted">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit! Tenetur,
               quo?
-          </h3>
+            </h3>
           </div>
           <div className="row">
-            {
-              books.map((book, i) => {
-                return <Book book={book} key={i} />;
-              })
-            }
+            {books.map((book, i) => {
+              return <Book book={book} key={i} />;
+            })}
           </div>
         </div>
       </section>
