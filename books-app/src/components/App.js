@@ -1,9 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import BookList from "./BookList";
 
-class App extends Component {
+import BookContextProvider from "../contexts/BookContext";
+
+class App extends React.Component {
   render() {
-    return <BookList />;
+    return (
+      <div>
+        <BookContextProvider>
+          <BookList />
+        </BookContextProvider>
+      </div>
+    );
   }
 }
 
