@@ -65,6 +65,7 @@ class BookContextProvider extends React.Component {
   render() {
     return (
       <BookContext.Provider value={{ ...this.state }}>
+        {/* Spread Operator */}
         {this.props.children}
         {/* Parent and Child */}
       </BookContext.Provider>
