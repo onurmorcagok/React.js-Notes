@@ -1,5 +1,7 @@
 import PersonList from "./components/PersonList";
 
+import PersonContextProvider from "./contexts/PersonContext";
+
 function App() {
   return (
     <div className="App">
@@ -25,7 +27,9 @@ function App() {
                 </div>
               </div>
             </div>
-            <PersonList />
+            <PersonContextProvider>
+              <PersonList />
+            </PersonContextProvider>
           </div>
         </div>
       </div>
