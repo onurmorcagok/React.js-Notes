@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 
 import { Button, Modal } from "react-bootstrap";
 import { PersonContext } from "../contexts/PersonContext";
@@ -14,6 +14,10 @@ const PersonList = () => {
   const handleShow = () => setShow(true);
 
   const handleClose = () => setShow(false);
+
+  useEffect(() => {
+    handleClose();
+  }, [persons]); // Persons array works when there is a change
 
   return (
     <>

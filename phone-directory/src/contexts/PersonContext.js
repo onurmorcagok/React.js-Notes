@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 export const PersonContext = createContext();
 
 const PersonContextProvider = (props) => {
-  const [persons] = useState([
+  const [persons, setPersons] = useState([
     {
       id: uuidv4(),
       name: "Thomas Hardy",
@@ -43,8 +43,12 @@ const PersonContextProvider = (props) => {
     },
   ]);
 
+  const addPerson = (name, email, address, phone) => {
+    setPersons([...persons, { id: uuidv4(), name, email, address, phone }]);
+  };
+
   return (
-    <PersonContext.Provider value={{ persons }}>
+    <PersonContext.Provider value={{ persons, addPerson }}>
       {props.children}
     </PersonContext.Provider>
   );
