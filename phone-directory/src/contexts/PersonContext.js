@@ -47,8 +47,12 @@ const PersonContextProvider = (props) => {
     setPersons([...persons, { id: uuidv4(), name, email, address, phone }]);
   };
 
+  const deletePerson = (id) => {
+    setPersons(persons.filter((person) => person.id !== id)); // If person.id is not equal to incoming id
+  };
+
   return (
-    <PersonContext.Provider value={{ persons, addPerson }}>
+    <PersonContext.Provider value={{ persons, addPerson, deletePerson }}>
       {props.children}
     </PersonContext.Provider>
   );

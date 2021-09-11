@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 
 import { Button, Modal } from "react-bootstrap";
 import { PersonContext } from "../contexts/PersonContext";
@@ -15,6 +15,16 @@ const PersonList = () => {
 
   const handleClose = () => setShow(false);
 
+  const myRef = useRef(null); // Reference type is inital value
+
+  console.log(myRef.current); // Initial value = "null"
+
+  const onInputFocus = () => {
+    console.log(myRef.current);
+    myRef.current.focus();
+  };
+
+  // useEffect hook works when there is a change
   useEffect(() => {
     handleClose();
   }, [persons]); // Persons array works when there is a change
@@ -68,6 +78,9 @@ const PersonList = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <input ref={myRef} type="text"></input>
+      <button onClick={onInputFocus}>Click</button>
     </>
   );
 };
