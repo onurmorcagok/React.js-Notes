@@ -51,8 +51,16 @@ const PersonContextProvider = (props) => {
     setPersons(persons.filter((person) => person.id !== id)); // If person.id is not equal to incoming id
   };
 
+  const updatePerson = (id, updatedPerson) => {
+    setPersons(
+      persons.map((person) => (person.id === id ? updatedPerson : person))
+    );
+  };
+
   return (
-    <PersonContext.Provider value={{ persons, addPerson, deletePerson }}>
+    <PersonContext.Provider
+      value={{ persons, addPerson, deletePerson, updatePerson }}
+    >
       {props.children}
     </PersonContext.Provider>
   );

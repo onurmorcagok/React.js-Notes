@@ -52,7 +52,11 @@ const PersonList = () => {
           </tr>
         </thead>
         <tbody>
-          <Person persons={persons} />
+          {persons.map((person) => (
+            <tr key={person.id}>
+              <Person person={person} />
+            </tr>
+          ))}
         </tbody>
       </table>
 
