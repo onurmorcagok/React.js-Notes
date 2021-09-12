@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { PersonContext } from "../contexts/PersonContext";
 import { Button, Modal } from "react-bootstrap";
 
@@ -12,6 +12,10 @@ const Person = ({ person }) => {
   const handleShow = () => setShow(true);
 
   const handleClose = () => setShow(false);
+
+  useEffect(() => {
+    handleClose();
+  }, [person]);
 
   return (
     <>
@@ -45,7 +49,7 @@ const Person = ({ person }) => {
           <Modal.Title>Update Person</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <EditForm />
+          <EditForm thePerson={person} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={handleClose}>
