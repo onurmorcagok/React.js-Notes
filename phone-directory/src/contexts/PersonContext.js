@@ -43,6 +43,8 @@ const PersonContextProvider = (props) => {
     },
   ]);
 
+  const sortedPerson = persons.sort((a, b) => (a.name < b.name ? -1 : 1)); // initial personList sorted
+
   const addPerson = (name, email, address, phone) => {
     setPersons([...persons, { id: uuidv4(), name, email, address, phone }]);
   };
@@ -59,7 +61,7 @@ const PersonContextProvider = (props) => {
 
   return (
     <PersonContext.Provider
-      value={{ persons, addPerson, deletePerson, updatePerson }}
+      value={{ sortedPerson, addPerson, deletePerson, updatePerson }}
     >
       {props.children}
     </PersonContext.Provider>

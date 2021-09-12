@@ -1,13 +1,13 @@
 import { useContext, useState, useEffect } from "react";
 
-import { Button, Modal } from "react-bootstrap";
+import { Button, Modal, Alert } from "react-bootstrap";
 import { PersonContext } from "../contexts/PersonContext";
 
 import Person from "./Person";
 import AddForm from "./AddForm";
 
 const PersonList = () => {
-  const { persons } = useContext(PersonContext);
+  const { sortedPerson } = useContext(PersonContext);
 
   const [show, setShow] = useState(false); // Modal first value
 
@@ -15,10 +15,24 @@ const PersonList = () => {
 
   const handleClose = () => setShow(false);
 
+  const [showAlert, setShowAlert] = useState(false); // Alert modal initial value "false"
+
+  // const handleShowAlert = () => setShowAlert(true);
+
+  const handleShowAlert = () => {
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2500);
+  };
+
   // useEffect hook works when there is a change
   useEffect(() => {
     handleClose();
-  }, [persons]); // Persons array works when there is a change
+    return () => {
+      handleShowAlert();
+    };
+  }, [sortedPerson]); // Persons array works when there is a change
 
   return (
     <>
@@ -41,6 +55,16 @@ const PersonList = () => {
           </div>
         </div>
       </div>
+
+      <Alert
+        show={showAlert}
+        variant="primary"
+        onClose={() => setShowAlert(false)}
+        dismissible
+      >
+        Phone Directory is updated!
+      </Alert>
+
       <table className="table table-striped table-hover">
         <thead>
           <tr>
@@ -52,7 +76,7 @@ const PersonList = () => {
           </tr>
         </thead>
         <tbody>
-          {persons.map((person) => (
+          {sortedPerson.map((person) => (
             <tr key={person.id}>
               <Person person={person} />
             </tr>
