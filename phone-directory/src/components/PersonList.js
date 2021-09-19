@@ -6,10 +6,16 @@ import { PersonContext } from "../contexts/PersonContext";
 import Person from "./Person";
 import AddForm from "./AddForm";
 
+import Pagination from "./Pagination";
+
 const PersonList = () => {
   const { sortedPerson } = useContext(PersonContext);
 
   const [show, setShow] = useState(false); // Modal first value
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const [personsPerPage] = useState(2);
 
   const handleShow = () => setShow(true);
 
@@ -33,6 +39,14 @@ const PersonList = () => {
       handleShowAlert();
     };
   }, [sortedPerson]); // Persons array works when there is a change
+
+  const indexOfLastPerson = currentPage * personsPerPage;
+  const indexOfFirstPerson = indexOfLastPerson - personsPerPage;
+  const currentPersons = sortedPerson.slice(
+    indexOfFirstPerson,
+    indexOfLastPerson
+  );
+  const totalPagesNum = Math.ceil(sortedPerson.length / personsPerPage);
 
   return (
     <>
@@ -76,13 +90,19 @@ const PersonList = () => {
           </tr>
         </thead>
         <tbody>
-          {sortedPerson.map((person) => (
+          {currentPersons.map((person) => (
             <tr key={person.id}>
               <Person person={person} />
             </tr>
           ))}
         </tbody>
       </table>
+
+      <Pagination
+        pages={totalPagesNum}
+        setCurrentPage={setCurrentPage}
+        personsPerPage={personsPerPage}
+      />
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header className="modal-header" closeButton>

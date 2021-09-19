@@ -41,6 +41,13 @@ const PersonContextProvider = (props) => {
       address: "Via Monte Bianco 34, Turin, Italy",
       phone: "(480) 631-2097",
     },
+    {
+      id: uuidv4(),
+      name: "Ali Bal",
+      email: "alibal@mail.com",
+      address: "Ataturk Street 34, Istanbul, Turkey",
+      phone: "(480) 555-1123",
+    },
   ]);
 
   const sortedPerson = persons.sort((a, b) => (a.name < b.name ? -1 : 1)); // initial personList sorted
