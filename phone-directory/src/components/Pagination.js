@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
-const Pagination = ({ pages, setCurrentPage, personsPerPage }) => {
+const Pagination = ({
+  pages,
+  setCurrentPage,
+  currentPersons,
+  sortedPerson,
+}) => {
   const numOfPages = [];
 
   for (let i = 1; i <= pages; i++) {
@@ -16,8 +21,8 @@ const Pagination = ({ pages, setCurrentPage, personsPerPage }) => {
   return (
     <div className="clearfix">
       <div className="hint-text">
-        Showing <b>{personsPerPage}</b> out of <b>{numOfPages.length}</b>{" "}
-        entries
+        Showing <b>{currentPersons.length}</b> out of{" "}
+        <b>{sortedPerson.length}</b> entries
       </div>
       <ul className="pagination">
         <li

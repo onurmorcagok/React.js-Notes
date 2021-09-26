@@ -102,6 +102,8 @@ const PersonList = () => {
         pages={totalPagesNum}
         setCurrentPage={setCurrentPage}
         personsPerPage={personsPerPage}
+        currentPersons={currentPersons}
+        sortedPerson={sortedPerson}
       />
 
       <Modal show={show} onHide={handleClose}>
