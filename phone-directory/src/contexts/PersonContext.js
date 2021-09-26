@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -49,6 +49,15 @@ const PersonContextProvider = (props) => {
       phone: "(480) 555-1123",
     },
   ]);
+
+  useEffect(() => {
+    const persons = localStorage.getItem("persons");
+    setPersons(JSON.parse(persons));
+  }, []); // First render
+
+  useEffect(() => {
+    localStorage.setItem("persons", JSON.stringify(persons));
+  });
 
   const sortedPerson = persons.sort((a, b) => (a.name < b.name ? -1 : 1)); // initial personList sorted
 
