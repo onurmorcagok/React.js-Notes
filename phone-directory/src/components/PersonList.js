@@ -15,7 +15,7 @@ const PersonList = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [personsPerPage] = useState(2);
+  const [personsPerPage] = useState(5);
 
   const handleShow = () => setShow(true);
 
