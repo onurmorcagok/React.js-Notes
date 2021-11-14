@@ -9,16 +9,15 @@ const CountryList = (props) => {
     <div className="row">
       {props.countries.map((country, id) => (
         <div className="col-lg-4" key={id}>
-          <div
-            className="card mb-4 shadow-sm"
-            style={{ height: "750px", textAlign: "center" }}
-          >
-            <img
-              src={country.flag}
-              className="card-img-top"
-              alt="Country Flag"
-              style={{ height: "230px" }}
-            />
+          <div className="card mb-4 shadow-sm" style={{ textAlign: "center" }}>
+            <Link to={`/add/${country.name}`}>
+              <img
+                src={country.flag}
+                className="card-img-top"
+                alt="Country Flag"
+                style={{ height: "230px" }}
+              />
+            </Link>
             <div className="card-body">
               <div
                 className="my-3 d-flex justify-content-between align-items-center"
@@ -44,12 +43,8 @@ const CountryList = (props) => {
               </h6>
               <h6 className="card-capital">Capital: {country.capital}</h6>
               <h6 className="card-languages">
-                Languages:{" "}
+                Languages:
                 {country.languages.map((l) => `${l.name}`).join(", ")}
-              </h6>
-              <h6 className="card-currencies">
-                Currencies:{" "}
-                {country.currencies.map((c) => `${c.name} (${c.code})`)}
               </h6>
               <h6 className="card-region">
                 Region: {country.region} / {country.subregion}

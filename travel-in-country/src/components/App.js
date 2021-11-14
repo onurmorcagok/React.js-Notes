@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   async getCountryList() {
-    const response = await axios.get(`https://restcountries.eu/rest/v2/all`);
+    const response = await axios.get(`https://restcountries.com/v2/all`);
 
     this.setState({
       countries: response.data,
