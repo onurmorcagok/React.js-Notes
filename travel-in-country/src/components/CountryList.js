@@ -10,7 +10,7 @@ const CountryList = (props) => {
       {props.countries.map((country, id) => (
         <div className="col-lg-4" key={id}>
           <div className="card mb-4 shadow-sm" style={{ textAlign: "center" }}>
-            <Link to={`/add/${country.name}`}>
+            <Link to={`/countries/${country.name}`}>
               <img
                 src={country.flag}
                 className="card-img-top"

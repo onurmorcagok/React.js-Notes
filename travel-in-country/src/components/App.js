@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import axios from "axios";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Country from "./Country";
 
 class App extends Component {
   state = {
@@ -60,6 +61,7 @@ class App extends Component {
                 </React.Fragment>
               )}
             ></Route>
+            <Route path="/countries/:name" children={<Country />} />
           </Switch>
         </div>
       </Router>
